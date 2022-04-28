@@ -9,13 +9,19 @@
 /* Begin PBXBuildFile section */
 		72A8893D281A67490094CFC7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8893C281A67490094CFC7 /* AppDelegate.swift */; };
 		72A8893F281A67490094CFC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8893E281A67490094CFC7 /* SceneDelegate.swift */; };
-		72A88941281A67490094CFC7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88940281A67490094CFC7 /* ViewController.swift */; };
-		72A88944281A67490094CFC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72A88942281A67490094CFC7 /* Main.storyboard */; };
 		72A88946281A67500094CFC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A88945281A67500094CFC7 /* Assets.xcassets */; };
 		72A88949281A67500094CFC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72A88947281A67500094CFC7 /* LaunchScreen.storyboard */; };
 		72A88954281A67510094CFC7 /* RegisterrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88953281A67510094CFC7 /* RegisterrTests.swift */; };
 		72A8895E281A67510094CFC7 /* RegisterrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8895D281A67510094CFC7 /* RegisterrUITests.swift */; };
 		72A88960281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8895F281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift */; };
+		72A88976281A68460094CFC7 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8896E281A68460094CFC7 /* RegisterPresenter.swift */; };
+		72A88977281A68460094CFC7 /* RegisterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8896F281A68460094CFC7 /* RegisterWorker.swift */; };
+		72A88978281A68460094CFC7 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88970281A68460094CFC7 /* RegisterRouter.swift */; };
+		72A88979281A68460094CFC7 /* RegisterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88971281A68460094CFC7 /* RegisterModels.swift */; };
+		72A8897A281A68460094CFC7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88972281A68460094CFC7 /* RegisterViewController.swift */; };
+		72A8897B281A68460094CFC7 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88973281A68460094CFC7 /* RegisterProtocols.swift */; };
+		72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88974281A68460094CFC7 /* RegisterAssembly.swift */; };
+		72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88975281A68460094CFC7 /* RegisterInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,8 +45,6 @@
 		72A88939281A67490094CFC7 /* Registerr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Registerr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8893C281A67490094CFC7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72A8893E281A67490094CFC7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		72A88940281A67490094CFC7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		72A88943281A67490094CFC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		72A88945281A67500094CFC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		72A88948281A67500094CFC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72A8894A281A67500094CFC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		72A88959281A67510094CFC7 /* RegisterrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegisterrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8895D281A67510094CFC7 /* RegisterrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterrUITests.swift; sourceTree = "<group>"; };
 		72A8895F281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterrUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		72A8896E281A68460094CFC7 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		72A8896F281A68460094CFC7 /* RegisterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorker.swift; sourceTree = "<group>"; };
+		72A88970281A68460094CFC7 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		72A88971281A68460094CFC7 /* RegisterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModels.swift; sourceTree = "<group>"; };
+		72A88972281A68460094CFC7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		72A88973281A68460094CFC7 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
+		72A88974281A68460094CFC7 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
+		72A88975281A68460094CFC7 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +111,8 @@
 		72A8893B281A67490094CFC7 /* Registerr */ = {
 			isa = PBXGroup;
 			children = (
-				72A8893C281A67490094CFC7 /* AppDelegate.swift */,
-				72A8893E281A67490094CFC7 /* SceneDelegate.swift */,
-				72A88940281A67490094CFC7 /* ViewController.swift */,
-				72A88942281A67490094CFC7 /* Main.storyboard */,
-				72A88945281A67500094CFC7 /* Assets.xcassets */,
-				72A88947281A67500094CFC7 /* LaunchScreen.storyboard */,
+				72A8896D281A67C70094CFC7 /* Common */,
+				72A8896C281A67B40094CFC7 /* RegisterScene */,
 				72A8894A281A67500094CFC7 /* Info.plist */,
 			);
 			path = Registerr;
@@ -125,6 +133,32 @@
 				72A8895F281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift */,
 			);
 			path = RegisterrUITests;
+			sourceTree = "<group>";
+		};
+		72A8896C281A67B40094CFC7 /* RegisterScene */ = {
+			isa = PBXGroup;
+			children = (
+				72A8896E281A68460094CFC7 /* RegisterPresenter.swift */,
+				72A8896F281A68460094CFC7 /* RegisterWorker.swift */,
+				72A88970281A68460094CFC7 /* RegisterRouter.swift */,
+				72A88971281A68460094CFC7 /* RegisterModels.swift */,
+				72A88972281A68460094CFC7 /* RegisterViewController.swift */,
+				72A88973281A68460094CFC7 /* RegisterProtocols.swift */,
+				72A88974281A68460094CFC7 /* RegisterAssembly.swift */,
+				72A88975281A68460094CFC7 /* RegisterInteractor.swift */,
+			);
+			path = RegisterScene;
+			sourceTree = "<group>";
+		};
+		72A8896D281A67C70094CFC7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				72A8893E281A67490094CFC7 /* SceneDelegate.swift */,
+				72A8893C281A67490094CFC7 /* AppDelegate.swift */,
+				72A88947281A67500094CFC7 /* LaunchScreen.storyboard */,
+				72A88945281A67500094CFC7 /* Assets.xcassets */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +267,6 @@
 			files = (
 				72A88949281A67500094CFC7 /* LaunchScreen.storyboard in Resources */,
 				72A88946281A67500094CFC7 /* Assets.xcassets in Resources */,
-				72A88944281A67490094CFC7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +291,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72A88941281A67490094CFC7 /* ViewController.swift in Sources */,
+				72A88979281A68460094CFC7 /* RegisterModels.swift in Sources */,
+				72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */,
 				72A8893D281A67490094CFC7 /* AppDelegate.swift in Sources */,
+				72A8897A281A68460094CFC7 /* RegisterViewController.swift in Sources */,
+				72A88978281A68460094CFC7 /* RegisterRouter.swift in Sources */,
+				72A8897B281A68460094CFC7 /* RegisterProtocols.swift in Sources */,
+				72A88976281A68460094CFC7 /* RegisterPresenter.swift in Sources */,
+				72A88977281A68460094CFC7 /* RegisterWorker.swift in Sources */,
+				72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */,
 				72A8893F281A67490094CFC7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		72A88942281A67490094CFC7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				72A88943281A67490094CFC7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		72A88947281A67500094CFC7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -444,7 +476,6 @@
 				INFOPLIST_FILE = Registerr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -472,7 +503,6 @@
 				INFOPLIST_FILE = Registerr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
