@@ -19,9 +19,9 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
         self.worker = worker
     }
 
-    func requestInitForm(_ request: Register.InitForm.Request) {
-        DispatchQueue.main.async {
-            self.presenter.presentInitForm(Register.InitForm.Response())
+    func analyzeCredential(_ request: Register.InitForm.Request) {
+        if request.login.isEmpty || request.password.isEmpty || request.password.count < 6 {
+            presenter.presentReject()
         }
     }
 }

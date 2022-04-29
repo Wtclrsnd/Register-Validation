@@ -1,17 +1,14 @@
 //
-//  RegisterModels.swift
+//  LoggedModels.swift
 //  Registerr
 //
 //  Created by Emil Shpeklord on 28.04.2022.
 //  Copyright (c) 2022 ___ORGANIZATIONNAME___. All rights reserved.
 //
 
-enum Register {
+enum Logged {
     enum InitForm {
-        struct Request {
-            var login: String
-            var password: String
-        }
+        struct Request {}
         struct Response {}
         struct ViewModel {}
     }

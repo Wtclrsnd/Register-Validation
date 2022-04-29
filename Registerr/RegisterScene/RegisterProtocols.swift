@@ -13,17 +13,19 @@ protocol RegisterDataPassing {
 protocol RegisterDataStore {}
 
 protocol RegisterBusinessLogic {
-    func requestInitForm(_ request: Register.InitForm.Request)
+    func analyzeCredential(_ request: Register.InitForm.Request)
 }
 
 protocol RegisterWorkerLogic {}
 
 protocol RegisterPresentationLogic {
-    func presentInitForm(_ response: Register.InitForm.Response)
+    func presentSolution(_ response: Register.InitForm.Response)
+    func presentReject()
 }
 
 protocol RegisterDisplayLogic: AnyObject {
-    func displayInitForm(_ viewModel: Register.InitForm.ViewModel)
+    func displaySolution(_ viewModel: Register.InitForm.ViewModel)
+    func displayReject()
 }
 
 protocol RegisterRoutingLogic {}

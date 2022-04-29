@@ -22,6 +22,14 @@
 		72A8897B281A68460094CFC7 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88973281A68460094CFC7 /* RegisterProtocols.swift */; };
 		72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88974281A68460094CFC7 /* RegisterAssembly.swift */; };
 		72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88975281A68460094CFC7 /* RegisterInteractor.swift */; };
+		72A88987281A84EB0094CFC7 /* LoggedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */; };
+		72A88988281A84EB0094CFC7 /* LoggedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88980281A84EB0094CFC7 /* LoggedWorker.swift */; };
+		72A88989281A84EB0094CFC7 /* LoggedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88981281A84EB0094CFC7 /* LoggedRouter.swift */; };
+		72A8898A281A84EB0094CFC7 /* LoggedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88982281A84EB0094CFC7 /* LoggedModels.swift */; };
+		72A8898B281A84EB0094CFC7 /* LoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88983281A84EB0094CFC7 /* LoggedViewController.swift */; };
+		72A8898C281A84EB0094CFC7 /* LoggedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */; };
+		72A8898D281A84EB0094CFC7 /* LoggedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88985281A84EB0094CFC7 /* LoggedAssembly.swift */; };
+		72A8898E281A84EB0094CFC7 /* LoggedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88986281A84EB0094CFC7 /* LoggedInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +69,14 @@
 		72A88973281A68460094CFC7 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		72A88974281A68460094CFC7 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
 		72A88975281A68460094CFC7 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedPresenter.swift; sourceTree = "<group>"; };
+		72A88980281A84EB0094CFC7 /* LoggedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedWorker.swift; sourceTree = "<group>"; };
+		72A88981281A84EB0094CFC7 /* LoggedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedRouter.swift; sourceTree = "<group>"; };
+		72A88982281A84EB0094CFC7 /* LoggedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedModels.swift; sourceTree = "<group>"; };
+		72A88983281A84EB0094CFC7 /* LoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedViewController.swift; sourceTree = "<group>"; };
+		72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedProtocols.swift; sourceTree = "<group>"; };
+		72A88985281A84EB0094CFC7 /* LoggedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedAssembly.swift; sourceTree = "<group>"; };
+		72A88986281A84EB0094CFC7 /* LoggedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				72A8896D281A67C70094CFC7 /* Common */,
+				72A8897E281A84CA0094CFC7 /* LoggedScene */,
 				72A8896C281A67B40094CFC7 /* RegisterScene */,
 				72A8894A281A67500094CFC7 /* Info.plist */,
 			);
@@ -159,6 +176,21 @@
 				72A88945281A67500094CFC7 /* Assets.xcassets */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		72A8897E281A84CA0094CFC7 /* LoggedScene */ = {
+			isa = PBXGroup;
+			children = (
+				72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */,
+				72A88980281A84EB0094CFC7 /* LoggedWorker.swift */,
+				72A88981281A84EB0094CFC7 /* LoggedRouter.swift */,
+				72A88982281A84EB0094CFC7 /* LoggedModels.swift */,
+				72A88983281A84EB0094CFC7 /* LoggedViewController.swift */,
+				72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */,
+				72A88985281A84EB0094CFC7 /* LoggedAssembly.swift */,
+				72A88986281A84EB0094CFC7 /* LoggedInteractor.swift */,
+			);
+			path = LoggedScene;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,13 +324,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				72A88979281A68460094CFC7 /* RegisterModels.swift in Sources */,
+				72A8898A281A84EB0094CFC7 /* LoggedModels.swift in Sources */,
+				72A8898B281A84EB0094CFC7 /* LoggedViewController.swift in Sources */,
 				72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */,
 				72A8893D281A67490094CFC7 /* AppDelegate.swift in Sources */,
+				72A88989281A84EB0094CFC7 /* LoggedRouter.swift in Sources */,
 				72A8897A281A68460094CFC7 /* RegisterViewController.swift in Sources */,
+				72A8898C281A84EB0094CFC7 /* LoggedProtocols.swift in Sources */,
 				72A88978281A68460094CFC7 /* RegisterRouter.swift in Sources */,
+				72A88988281A84EB0094CFC7 /* LoggedWorker.swift in Sources */,
 				72A8897B281A68460094CFC7 /* RegisterProtocols.swift in Sources */,
 				72A88976281A68460094CFC7 /* RegisterPresenter.swift in Sources */,
+				72A88987281A84EB0094CFC7 /* LoggedPresenter.swift in Sources */,
 				72A88977281A68460094CFC7 /* RegisterWorker.swift in Sources */,
+				72A8898E281A84EB0094CFC7 /* LoggedInteractor.swift in Sources */,
+				72A8898D281A84EB0094CFC7 /* LoggedAssembly.swift in Sources */,
 				72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */,
 				72A8893F281A67490094CFC7 /* SceneDelegate.swift in Sources */,
 			);
