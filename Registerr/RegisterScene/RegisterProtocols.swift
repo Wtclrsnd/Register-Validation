@@ -28,4 +28,6 @@ protocol RegisterDisplayLogic: AnyObject {
     func displayReject()
 }
 
-protocol RegisterRoutingLogic {}
+protocol RegisterRoutingLogic {
+    func moveToLogged(viewModel: Register.InitForm.ViewModel)
+}

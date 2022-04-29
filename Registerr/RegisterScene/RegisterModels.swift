@@ -12,7 +12,19 @@ enum Register {
             var login: String
             var password: String
         }
-        struct Response {}
-        struct ViewModel {}
+        struct Response {
+            var login: String
+            var password: String
+            var status: Status
+        }
+        struct ViewModel {
+            var login: String
+            var password: String
+            var status: Status
+        }
     }
+}
+
+enum Status {
+    case sucsess, failed
 }

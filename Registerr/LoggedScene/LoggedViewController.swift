@@ -26,6 +26,7 @@ final class LoggedViewController: UIViewController, LoggedDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
+        view.backgroundColor = .cyan
     }
 
     // MARK: - LoggedDisplayLogic

@@ -70,7 +70,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
+        view.backgroundColor = .black
         setUpUI()
         loginButton.addTarget(self, action: #selector(loggingIn), for: .touchUpInside)
     }
@@ -93,7 +93,9 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
     }
     // MARK: - RegisterDisplayLogic
 
-    func displaySolution(_ viewModel: Register.InitForm.ViewModel) {}
+    func displaySolution(_ viewModel: Register.InitForm.ViewModel) {
+        router.moveToLogged(viewModel: viewModel)
+    }
 
     func displayReject() {
         let alertController = UIAlertController(title: "Incorrect credential", message: "login password are not correct", preferredStyle: .alert)

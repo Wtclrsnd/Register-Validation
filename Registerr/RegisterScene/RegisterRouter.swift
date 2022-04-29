@@ -15,12 +15,9 @@ final class RegisterRouter: RegisterRoutingLogic, RegisterDataPassing {
     init(dataStore: RegisterDataStore) {
         self.dataStore = dataStore
     }
-}
 
-private extension RegisterRouter {
-//    func passDataTo_() {
-//        source: RegisterDataStore,
-//        destination: inout SomewhereDataStore
-//    ) {
-//    }
+    func moveToLogged(viewModel: Register.InitForm.ViewModel) {
+        let loggedVC = LoggedAssembly.build()
+        viewController?.navigationController?.pushViewController(loggedVC, animated: true)
+    }
 }
