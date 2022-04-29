@@ -11,20 +11,20 @@ enum Register {
         struct Request {
             var login: String
             var password: String
+            var loginStatus: Status
+            var passwordStatus: Status
         }
         struct Response {
-            var login: String
-            var password: String
-            var status: Status
+            var loginStatus: Status
+            var passwordStatus: Status
         }
         struct ViewModel {
-            var login: String
-            var password: String
-            var status: Status
+            var loginStatus: Status
+            var passwordStatus: Status
         }
     }
 }
 
 enum Status {
-    case sucsess, failed
+    case sucsess, isEmpty, isLong, isShort, notEntered, entered
 }

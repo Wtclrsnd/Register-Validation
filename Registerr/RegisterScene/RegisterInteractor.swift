@@ -20,11 +20,28 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
     }
 
     func analyzeCredential(_ request: Register.InitForm.Request) {
-        if request.login.isEmpty || request.password.isEmpty || request.password.count < 6 {
-            presenter.presentReject()
-        } else {
-            let response = Register.InitForm.Response(login: request.login, password: request.password, status: .sucsess)
-            presenter.presentSolution(response)
+        var response = Register.InitForm.Response(loginStatus: .notEntered, passwordStatus: .notEntered)
+        switch request.login.count {
+        case 0:
+            response.loginStatus = .isEmpty
+        case 0..<6:
+            response.loginStatus = .isShort
+        case 12...:
+            response.loginStatus = .isLong
+        default:
+            response.loginStatus = .sucsess
         }
+
+        switch request.password.count {
+        case 0:
+            response.passwordStatus = .isEmpty
+        case 0..<6:
+            response.passwordStatus = .isShort
+        case 12...:
+            response.passwordStatus = .isLong
+        default:
+            response.passwordStatus = .sucsess
+        }
+        presenter.presentSolution(response)
     }
 }

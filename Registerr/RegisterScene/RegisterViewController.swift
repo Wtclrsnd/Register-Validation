@@ -10,6 +10,7 @@ import UIKit
 
 final class RegisterViewController: UIViewController, RegisterDisplayLogic {
 
+    // MARK: - UI Elements
     private lazy var stack: UIStackView = {
         let stack = UIStackView()
         stack.translatesAutoresizingMaskIntoConstraints = false
@@ -44,6 +45,26 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         return textField
     }()
 
+    private lazy var validationLoginLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.textColor = .red
+        label.isHidden = true
+        label.font = .systemFont(ofSize: 15)
+        label.text = "Login is empty"
+        return label
+    }()
+
+    private lazy var validationPasswordLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .left
+        label.textColor = .red
+        label.isHidden = true
+        label.font = .systemFont(ofSize: 15)
+        label.text = "Password is incorrect"
+        return label
+    }()
+
     private lazy var loginButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .link
@@ -54,6 +75,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         return button
     }()
 
+    // MARK: - Refs and Inits
     private let interactor: RegisterBusinessLogic
     private let router: RegisterRoutingLogic
 
@@ -68,16 +90,26 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
         setUpUI()
         loginButton.addTarget(self, action: #selector(loggingIn), for: .touchUpInside)
+
+        loginTextField.addTarget(self, action: #selector(validation), for: .editingDidEnd)
+        passwordTextField.addTarget(self, action: #selector(validation), for: .editingDidEnd)
+        loginTextField.addTarget(self, action: #selector(validation), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(validation), for: .editingChanged)
+
     }
 
+    // MARK: - SetUpUI
     private func setUpUI() {
         stack.addArrangedSubview(loginTextField)
+        stack.addArrangedSubview(validationLoginLabel)
         stack.addArrangedSubview(passwordTextField)
+        stack.addArrangedSubview(validationPasswordLabel)
         stack.addArrangedSubview(loginButton)
         view.addSubview(stack)
 
@@ -87,25 +119,55 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         stack.trailingAnchor.constraint(equalTo: view.trailingAnchor,constant: -16).isActive = true
     }
 
+    // MARK: - Handlers
     @objc private func loggingIn() {
-        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "")
+        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .notEntered, passwordStatus: .notEntered)
+
         interactor.analyzeCredential(request)
     }
+
+    @objc private func validation() {
+        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .notEntered, passwordStatus: .notEntered)
+        interactor.analyzeCredential(request)
+    }
+
     // MARK: - RegisterDisplayLogic
 
     func displaySolution(_ viewModel: Register.InitForm.ViewModel) {
-        router.moveToLogged(viewModel: viewModel)
-    }
-
-    func displayReject() {
-        let alertController = UIAlertController(title: "Incorrect credential", message: "login password are not correct", preferredStyle: .alert)
-        let okayAction = UIAlertAction(title: "Okay", style: .default) { (action) -> Void in
-            print("The user is okay.")
+        switch viewModel.loginStatus {
+        case .isLong:
+            validationLoginLabel.text = "login is long"
+            validationLoginLabel.isHidden = false
+        case .isShort:
+            validationLoginLabel.text = "login is short"
+            validationLoginLabel.isHidden = false
+        case .isEmpty:
+            validationLoginLabel.text = "login is empty"
+            validationLoginLabel.isHidden = false
+        case .notEntered:
+            validationLoginLabel.isHidden = true
+        default:
+            validationLoginLabel.isHidden = true
         }
-        alertController.addAction(okayAction)
-        self.present(alertController, animated: true, completion: {
-            self.loginTextField.text = ""
-            self.passwordTextField.text = ""
-        })
+
+        switch viewModel.passwordStatus {
+        case .isLong:
+            validationPasswordLabel.text = "password is long"
+            validationPasswordLabel.isHidden = false
+        case .isShort:
+            validationPasswordLabel.text = "password is short"
+            validationPasswordLabel.isHidden = false
+        case .isEmpty:
+            validationPasswordLabel.text = "password is empty"
+            validationPasswordLabel.isHidden = false
+        case .notEntered:
+            validationPasswordLabel.isHidden = true
+        default:
+            validationPasswordLabel.isHidden = true
+        }
+
+        if viewModel.loginStatus == .sucsess && viewModel.passwordStatus == .sucsess {
+            router.moveToLogged(viewModel: viewModel)
+        }
     }
 }

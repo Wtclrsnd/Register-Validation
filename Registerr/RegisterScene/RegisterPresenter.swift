@@ -8,13 +8,9 @@
 
 final class RegisterPresenter: RegisterPresentationLogic {
     weak var view: RegisterDisplayLogic?
-
-    func presentReject() {
-        view?.displayReject()
-    }
     
     func presentSolution(_ response: Register.InitForm.Response) {
-        let model = Register.InitForm.ViewModel(login: response.login, password: response.password, status: response.status)
+        let model = Register.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
         view?.displaySolution(model)
     }
 }

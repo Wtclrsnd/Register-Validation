@@ -20,12 +20,10 @@ protocol RegisterWorkerLogic {}
 
 protocol RegisterPresentationLogic {
     func presentSolution(_ response: Register.InitForm.Response)
-    func presentReject()
 }
 
 protocol RegisterDisplayLogic: AnyObject {
     func displaySolution(_ viewModel: Register.InitForm.ViewModel)
-    func displayReject()
 }
 
 protocol RegisterRoutingLogic {
