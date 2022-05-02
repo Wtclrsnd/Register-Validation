@@ -22,10 +22,14 @@ protocol RegisterWorkerLogic {}
 
 protocol RegisterPresentationLogic {
     func presentSolution(_ response: Register.InitForm.Response)
+    func presentLoginSolution(_ response: Register.InitForm.Response)
+    func presentPasswordSolution(_ response: Register.InitForm.Response)
 }
 
 protocol RegisterDisplayLogic: AnyObject {
     func displaySolution(_ viewModel: Register.InitForm.ViewModel)
+    func displayLoginSolution(_ viewModel: Register.InitForm.ViewModel)
+    func displayPasswordSolution(_ viewModel: Register.InitForm.ViewModel)
 }
 
 protocol RegisterRoutingLogic {

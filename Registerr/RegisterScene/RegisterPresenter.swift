@@ -13,4 +13,14 @@ final class RegisterPresenter: RegisterPresentationLogic {
         let model = Register.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
         view?.displaySolution(model)
     }
+
+    func presentLoginSolution(_ response: Register.InitForm.Response) {
+        let model = Register.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
+        view?.displayLoginSolution(model)
+    }
+
+    func presentPasswordSolution(_ response: Register.InitForm.Response) {
+        let model = Register.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
+        view?.displayPasswordSolution(model)
+    }
 }

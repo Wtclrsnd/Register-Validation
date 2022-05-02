@@ -119,7 +119,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
 
     // MARK: - Handlers
     @objc private func loggingIn() {
-        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .notEntered, passwordStatus: .notEntered)
+        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .entered)
 
         interactor.analyzeCredential(request)
     }
@@ -147,8 +147,6 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         case .isEmpty:
             validationLoginLabel.text = "login is empty"
             validationLoginLabel.isHidden = false
-        case .notEntered:
-            validationLoginLabel.isHidden = true
         default:
             validationLoginLabel.isHidden = true
         }
@@ -163,8 +161,6 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         case .isEmpty:
             validationPasswordLabel.text = "password is empty"
             validationPasswordLabel.isHidden = false
-        case .notEntered:
-            validationPasswordLabel.isHidden = true
         default:
             validationPasswordLabel.isHidden = true
         }
@@ -172,5 +168,38 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         if viewModel.loginStatus == .sucsess && viewModel.passwordStatus == .sucsess {
             router.moveToLogged(viewModel: viewModel)
         }
+    }
+
+    func displayLoginSolution(_ viewModel: Register.InitForm.ViewModel) {
+        switch viewModel.loginStatus {
+        case .isLong:
+            validationLoginLabel.text = "login is long"
+            validationLoginLabel.isHidden = false
+        case .isShort:
+            validationLoginLabel.text = "login is short"
+            validationLoginLabel.isHidden = false
+        case .isEmpty:
+            validationLoginLabel.text = "login is empty"
+            validationLoginLabel.isHidden = false
+        default:
+            validationLoginLabel.isHidden = true
+        }
+    }
+
+    func displayPasswordSolution(_ viewModel: Register.InitForm.ViewModel) {
+        switch viewModel.passwordStatus {
+        case .isLong:
+            validationPasswordLabel.text = "password is long"
+            validationPasswordLabel.isHidden = false
+        case .isShort:
+            validationPasswordLabel.text = "password is short"
+            validationPasswordLabel.isHidden = false
+        case .isEmpty:
+            validationPasswordLabel.text = "password is empty"
+            validationPasswordLabel.isHidden = false
+        default:
+            validationPasswordLabel.isHidden = true
+        }
+
     }
 }

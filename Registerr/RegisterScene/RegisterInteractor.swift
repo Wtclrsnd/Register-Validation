@@ -58,7 +58,7 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
         default:
             response.loginStatus = .sucsess
         }
-        presenter.presentSolution(response)
+        presenter.presentLoginSolution(response)
     }
 
     func analyzePassword(_ request: Register.InitForm.Request) {
@@ -73,6 +73,6 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
         default:
             response.passwordStatus = .sucsess
         }
-        presenter.presentSolution(response)
+        presenter.presentPasswordSolution(response)
     }
 }
