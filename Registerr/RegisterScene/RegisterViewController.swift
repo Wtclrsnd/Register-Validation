@@ -124,11 +124,6 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         interactor.analyzeCredential(request)
     }
 
-    @objc private func validation() {
-        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .notEntered, passwordStatus: .notEntered)
-        interactor.analyzeCredential(request)
-    }
-
     @objc private func loginValidation() {
         let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .notEntered)
         interactor.analyzeLogin(request)

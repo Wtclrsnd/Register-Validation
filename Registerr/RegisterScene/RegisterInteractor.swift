@@ -21,6 +21,7 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
 
     func analyzeCredential(_ request: Register.InitForm.Request) {
         var response = Register.InitForm.Response(loginStatus: .notEntered, passwordStatus: .notEntered)
+
         switch request.login.count {
         case 0:
             response.loginStatus = .isEmpty
@@ -31,7 +32,7 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
         default:
             response.loginStatus = .sucsess
         }
-
+        
         switch request.password.count {
         case 0:
             response.passwordStatus = .isEmpty
