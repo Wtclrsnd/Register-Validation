@@ -97,10 +97,8 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         setUpUI()
         loginButton.addTarget(self, action: #selector(loggingIn), for: .touchUpInside)
 
-        loginTextField.addTarget(self, action: #selector(validation), for: .editingDidEnd)
-        passwordTextField.addTarget(self, action: #selector(validation), for: .editingDidEnd)
-        loginTextField.addTarget(self, action: #selector(validation), for: .editingChanged)
-        passwordTextField.addTarget(self, action: #selector(validation), for: .editingChanged)
+        loginTextField.addTarget(self, action: #selector(loginValidation), for: [.editingDidEnd, .editingChanged])
+        passwordTextField.addTarget(self, action: #selector(passwordValidation), for: [.editingDidEnd, .editingChanged])
 
     }
 
@@ -129,6 +127,16 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
     @objc private func validation() {
         let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .notEntered, passwordStatus: .notEntered)
         interactor.analyzeCredential(request)
+    }
+
+    @objc private func loginValidation() {
+        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .notEntered)
+        interactor.analyzeLogin(request)
+    }
+
+    @objc private func passwordValidation() {
+        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .notEntered, passwordStatus: .entered)
+        interactor.analyzePassword(request)
     }
 
     // MARK: - RegisterDisplayLogic

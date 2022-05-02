@@ -14,6 +14,8 @@ protocol RegisterDataStore {}
 
 protocol RegisterBusinessLogic {
     func analyzeCredential(_ request: Register.InitForm.Request)
+    func analyzeLogin(_ request: Register.InitForm.Request)
+    func analyzePassword(_ request: Register.InitForm.Request)
 }
 
 protocol RegisterWorkerLogic {}
