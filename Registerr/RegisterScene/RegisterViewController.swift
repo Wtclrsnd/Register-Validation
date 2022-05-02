@@ -121,7 +121,8 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
     @objc private func loggingIn() {
         let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .entered)
 
-        interactor.analyzeCredential(request)
+        interactor.analyzePassword(request)
+        interactor.analyzeLogin(request)
     }
 
     @objc private func loginValidation() {
@@ -135,40 +136,6 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
     }
 
     // MARK: - RegisterDisplayLogic
-
-    func displaySolution(_ viewModel: Register.InitForm.ViewModel) {
-        switch viewModel.loginStatus {
-        case .isLong:
-            validationLoginLabel.text = "login is long"
-            validationLoginLabel.isHidden = false
-        case .isShort:
-            validationLoginLabel.text = "login is short"
-            validationLoginLabel.isHidden = false
-        case .isEmpty:
-            validationLoginLabel.text = "login is empty"
-            validationLoginLabel.isHidden = false
-        default:
-            validationLoginLabel.isHidden = true
-        }
-
-        switch viewModel.passwordStatus {
-        case .isLong:
-            validationPasswordLabel.text = "password is long"
-            validationPasswordLabel.isHidden = false
-        case .isShort:
-            validationPasswordLabel.text = "password is short"
-            validationPasswordLabel.isHidden = false
-        case .isEmpty:
-            validationPasswordLabel.text = "password is empty"
-            validationPasswordLabel.isHidden = false
-        default:
-            validationPasswordLabel.isHidden = true
-        }
-
-        if viewModel.loginStatus == .sucsess && viewModel.passwordStatus == .sucsess {
-            router.moveToLogged(viewModel: viewModel)
-        }
-    }
 
     func displayLoginSolution(_ viewModel: Register.InitForm.ViewModel) {
         switch viewModel.loginStatus {
