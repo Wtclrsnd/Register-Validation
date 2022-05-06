@@ -22,7 +22,6 @@
 		72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88974281A68460094CFC7 /* RegisterAssembly.swift */; };
 		72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88975281A68460094CFC7 /* RegisterInteractor.swift */; };
 		72A88987281A84EB0094CFC7 /* LoggedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */; };
-		72A88989281A84EB0094CFC7 /* LoggedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88981281A84EB0094CFC7 /* LoggedRouter.swift */; };
 		72A8898A281A84EB0094CFC7 /* LoggedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88982281A84EB0094CFC7 /* LoggedModels.swift */; };
 		72A8898B281A84EB0094CFC7 /* LoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88983281A84EB0094CFC7 /* LoggedViewController.swift */; };
 		72A8898C281A84EB0094CFC7 /* LoggedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */; };
@@ -68,7 +67,6 @@
 		72A88974281A68460094CFC7 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
 		72A88975281A68460094CFC7 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedPresenter.swift; sourceTree = "<group>"; };
-		72A88981281A84EB0094CFC7 /* LoggedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedRouter.swift; sourceTree = "<group>"; };
 		72A88982281A84EB0094CFC7 /* LoggedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedModels.swift; sourceTree = "<group>"; };
 		72A88983281A84EB0094CFC7 /* LoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedViewController.swift; sourceTree = "<group>"; };
 		72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedProtocols.swift; sourceTree = "<group>"; };
@@ -180,7 +178,6 @@
 			isa = PBXGroup;
 			children = (
 				72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */,
-				72A88981281A84EB0094CFC7 /* LoggedRouter.swift */,
 				72A88982281A84EB0094CFC7 /* LoggedModels.swift */,
 				72A88983281A84EB0094CFC7 /* LoggedViewController.swift */,
 				72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */,
@@ -325,7 +322,6 @@
 				72A8898B281A84EB0094CFC7 /* LoggedViewController.swift in Sources */,
 				72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */,
 				72A8893D281A67490094CFC7 /* AppDelegate.swift in Sources */,
-				72A88989281A84EB0094CFC7 /* LoggedRouter.swift in Sources */,
 				72A8897A281A68460094CFC7 /* RegisterViewController.swift in Sources */,
 				72A8898C281A84EB0094CFC7 /* LoggedProtocols.swift in Sources */,
 				72A88978281A68460094CFC7 /* RegisterRouter.swift in Sources */,

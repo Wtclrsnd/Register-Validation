@@ -23,5 +23,3 @@ protocol LoggedPresentationLogic {
 protocol LoggedDisplayLogic: AnyObject {
     func displayInitForm(_ viewModel: Logged.InitForm.ViewModel)
 }
-
-protocol LoggedRoutingLogic {}

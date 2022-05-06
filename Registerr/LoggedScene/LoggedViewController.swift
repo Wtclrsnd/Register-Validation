@@ -20,11 +20,9 @@ final class LoggedViewController: UIViewController, LoggedDisplayLogic {
     }()
 
     private let interactor: LoggedBusinessLogic
-    private let router: LoggedRoutingLogic
 
-    init(interactor: LoggedBusinessLogic, router: LoggedRoutingLogic) {
+    init(interactor: LoggedBusinessLogic) {
         self.interactor = interactor
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
 

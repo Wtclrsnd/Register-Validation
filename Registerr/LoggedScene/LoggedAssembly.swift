@@ -12,13 +12,11 @@ enum LoggedAssembly {
     static func build(_ model: Register.InitForm.ViewModel) -> UIViewController {
         let presenter = LoggedPresenter()
         let interactor = LoggedInteractor(presenter: presenter)
-        let router = LoggedRouter(dataStore: interactor)
-        let viewController = LoggedViewController(interactor: interactor, router: router)
+        let viewController = LoggedViewController(interactor: interactor)
 
         interactor.rawData = model
         presenter.view = viewController
-        router.viewController = viewController
-
+        
         return viewController
     }
 }
