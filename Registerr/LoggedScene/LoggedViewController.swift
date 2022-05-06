@@ -43,8 +43,7 @@ final class LoggedViewController: UIViewController, LoggedDisplayLogic {
         view.addSubview(displayLabel)
 
         displayLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        displayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
-        displayLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
+        displayLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
 
     // MARK: - LoggedDisplayLogic

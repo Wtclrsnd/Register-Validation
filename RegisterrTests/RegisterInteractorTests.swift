@@ -25,7 +25,7 @@ class RegisterInteractorTests: XCTestCase {
 
     func testLongLoginSucsess() throws {
         // given
-        let request = Register.InitForm.Request(login: "AAAAAAAAAAAAAAAA", password: "00000", loginStatus: .notEntered, passwordStatus: .notEntered)
+        let request = Register.InitForm.Request(login: "AAAAAAAAAAAAAAAAAAAAAAAA", password: "00000", loginStatus: .notEntered, passwordStatus: .notEntered)
         // when
         sut.analyzeLogin(request)
         let loginSt = presenter.responseDisplay.loginStatus
