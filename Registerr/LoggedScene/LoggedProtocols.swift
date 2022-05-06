@@ -16,8 +16,6 @@ protocol LoggedBusinessLogic {
     func requestInitForm(_ request: Logged.InitForm.Request)
 }
 
-protocol LoggedWorkerLogic {}
-
 protocol LoggedPresentationLogic {
     func presentInitForm(_ response: Logged.InitForm.Response)
 }

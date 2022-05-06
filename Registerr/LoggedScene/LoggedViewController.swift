@@ -9,6 +9,16 @@
 import UIKit
 
 final class LoggedViewController: UIViewController, LoggedDisplayLogic {
+
+    private lazy var displayLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.textColor = .white
+        label.font = .systemFont(ofSize: 55)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+
     private let interactor: LoggedBusinessLogic
     private let router: LoggedRoutingLogic
 
@@ -26,12 +36,29 @@ final class LoggedViewController: UIViewController, LoggedDisplayLogic {
     override func viewDidLoad() {
         super.viewDidLoad()
         initForm()
-        view.backgroundColor = .cyan
+        setUpUI()
+    }
+
+    private func setUpUI() {
+        view.addSubview(displayLabel)
+
+        displayLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        displayLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50).isActive = true
+        displayLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50).isActive = true
     }
 
     // MARK: - LoggedDisplayLogic
 
-    func displayInitForm(_ viewModel: Logged.InitForm.ViewModel) {}
+    func displayInitForm(_ viewModel: Logged.InitForm.ViewModel) {
+        switch (viewModel.loginStatus, viewModel.passwordStatus) {
+        case (.correct, .correct):
+            displayLabel.text = "Welcome Emil!"
+            view.backgroundColor = .green
+        default:
+            displayLabel.text = "Who R U???"
+            view.backgroundColor = .red
+        }
+    }
 
     // MARK: - Private
 

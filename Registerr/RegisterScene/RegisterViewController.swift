@@ -29,6 +29,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 10
         textField.backgroundColor = .white
+        textField.accessibilityIdentifier = "LoginTF"
         return textField
     }()
 
@@ -42,6 +43,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         textField.leftViewMode = .always
         textField.layer.cornerRadius = 10
         textField.backgroundColor = .white
+        textField.accessibilityIdentifier = "PasswordTF"
         return textField
     }()
 
@@ -52,6 +54,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         label.isHidden = true
         label.font = .systemFont(ofSize: 15)
         label.text = "Login is empty"
+        label.accessibilityIdentifier = "LoginValidationLabel"
         return label
     }()
 
@@ -62,6 +65,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         label.isHidden = true
         label.font = .systemFont(ofSize: 15)
         label.text = "Password is incorrect"
+        label.accessibilityIdentifier = "PasswordValidationLabel"
         return label
     }()
 
@@ -72,6 +76,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 10
         button.titleLabel?.font = .boldSystemFont(ofSize: 30)
+        button.accessibilityIdentifier = "LoginButton"
         return button
     }()
 
@@ -119,10 +124,19 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
 
     // MARK: - Handlers
     @objc private func loggingIn() {
-        let request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .entered)
-
-        interactor.analyzePassword(request)
-        interactor.analyzeLogin(request)
+        var request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .entered)
+        if request.login == "EmilShpeklord" && request.password == "123456" {
+            request.loginStatus = .correct
+            request.passwordStatus = .correct
+        } else {
+            interactor.analyzeLogin(request)
+            interactor.analyzePassword(request)
+            if validationLoginLabel.isHidden && validationPasswordLabel.isHidden {
+                request.loginStatus = .incorrect
+                request.passwordStatus = .incorrect
+            }
+        }
+        interactor.analyzeLoggedIn(request)
     }
 
     @objc private func loginValidation() {
@@ -148,6 +162,8 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         case .isEmpty:
             validationLoginLabel.text = "login is empty"
             validationLoginLabel.isHidden = false
+        case .correct:
+            validationLoginLabel.isHidden = true
         default:
             validationLoginLabel.isHidden = true
         }
@@ -164,9 +180,14 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         case .isEmpty:
             validationPasswordLabel.text = "password is empty"
             validationPasswordLabel.isHidden = false
+        case .correct:
+            validationPasswordLabel.isHidden = true
         default:
             validationPasswordLabel.isHidden = true
         }
+    }
 
+    func displayLoggedIn(_ viewModel: Register.InitForm.ViewModel) {
+        router.moveToLogged(viewModel: viewModel)
     }
 }

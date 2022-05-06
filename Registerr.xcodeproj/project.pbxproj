@@ -11,11 +11,10 @@
 		72A8893F281A67490094CFC7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8893E281A67490094CFC7 /* SceneDelegate.swift */; };
 		72A88946281A67500094CFC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 72A88945281A67500094CFC7 /* Assets.xcassets */; };
 		72A88949281A67500094CFC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 72A88947281A67500094CFC7 /* LaunchScreen.storyboard */; };
-		72A88954281A67510094CFC7 /* RegisterrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88953281A67510094CFC7 /* RegisterrTests.swift */; };
+		72A88954281A67510094CFC7 /* RegisterInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88953281A67510094CFC7 /* RegisterInteractorTests.swift */; };
 		72A8895E281A67510094CFC7 /* RegisterrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8895D281A67510094CFC7 /* RegisterrUITests.swift */; };
 		72A88960281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8895F281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift */; };
 		72A88976281A68460094CFC7 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8896E281A68460094CFC7 /* RegisterPresenter.swift */; };
-		72A88977281A68460094CFC7 /* RegisterWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8896F281A68460094CFC7 /* RegisterWorker.swift */; };
 		72A88978281A68460094CFC7 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88970281A68460094CFC7 /* RegisterRouter.swift */; };
 		72A88979281A68460094CFC7 /* RegisterModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88971281A68460094CFC7 /* RegisterModels.swift */; };
 		72A8897A281A68460094CFC7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88972281A68460094CFC7 /* RegisterViewController.swift */; };
@@ -23,13 +22,15 @@
 		72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88974281A68460094CFC7 /* RegisterAssembly.swift */; };
 		72A8897D281A68460094CFC7 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88975281A68460094CFC7 /* RegisterInteractor.swift */; };
 		72A88987281A84EB0094CFC7 /* LoggedPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */; };
-		72A88988281A84EB0094CFC7 /* LoggedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88980281A84EB0094CFC7 /* LoggedWorker.swift */; };
 		72A88989281A84EB0094CFC7 /* LoggedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88981281A84EB0094CFC7 /* LoggedRouter.swift */; };
 		72A8898A281A84EB0094CFC7 /* LoggedModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88982281A84EB0094CFC7 /* LoggedModels.swift */; };
 		72A8898B281A84EB0094CFC7 /* LoggedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88983281A84EB0094CFC7 /* LoggedViewController.swift */; };
 		72A8898C281A84EB0094CFC7 /* LoggedProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */; };
 		72A8898D281A84EB0094CFC7 /* LoggedAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88985281A84EB0094CFC7 /* LoggedAssembly.swift */; };
 		72A8898E281A84EB0094CFC7 /* LoggedInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A88986281A84EB0094CFC7 /* LoggedInteractor.swift */; };
+		72D093162821A1F200357A67 /* RegisterRouterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D093152821A1F200357A67 /* RegisterRouterMock.swift */; };
+		72D093182821A20800357A67 /* RegisterInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D093172821A20800357A67 /* RegisterInteractorMock.swift */; };
+		72D0931A2821A6E700357A67 /* RegisterPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D093192821A6E700357A67 /* RegisterPresenterMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,12 +58,11 @@
 		72A88948281A67500094CFC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		72A8894A281A67500094CFC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72A8894F281A67510094CFC7 /* RegisterrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegisterrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		72A88953281A67510094CFC7 /* RegisterrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterrTests.swift; sourceTree = "<group>"; };
+		72A88953281A67510094CFC7 /* RegisterInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorTests.swift; sourceTree = "<group>"; };
 		72A88959281A67510094CFC7 /* RegisterrUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RegisterrUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A8895D281A67510094CFC7 /* RegisterrUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterrUITests.swift; sourceTree = "<group>"; };
 		72A8895F281A67510094CFC7 /* RegisterrUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterrUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		72A8896E281A68460094CFC7 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
-		72A8896F281A68460094CFC7 /* RegisterWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWorker.swift; sourceTree = "<group>"; };
 		72A88970281A68460094CFC7 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
 		72A88971281A68460094CFC7 /* RegisterModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModels.swift; sourceTree = "<group>"; };
 		72A88972281A68460094CFC7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -70,13 +70,15 @@
 		72A88974281A68460094CFC7 /* RegisterAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAssembly.swift; sourceTree = "<group>"; };
 		72A88975281A68460094CFC7 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedPresenter.swift; sourceTree = "<group>"; };
-		72A88980281A84EB0094CFC7 /* LoggedWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedWorker.swift; sourceTree = "<group>"; };
 		72A88981281A84EB0094CFC7 /* LoggedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedRouter.swift; sourceTree = "<group>"; };
 		72A88982281A84EB0094CFC7 /* LoggedModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedModels.swift; sourceTree = "<group>"; };
 		72A88983281A84EB0094CFC7 /* LoggedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedViewController.swift; sourceTree = "<group>"; };
 		72A88984281A84EB0094CFC7 /* LoggedProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedProtocols.swift; sourceTree = "<group>"; };
 		72A88985281A84EB0094CFC7 /* LoggedAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedAssembly.swift; sourceTree = "<group>"; };
 		72A88986281A84EB0094CFC7 /* LoggedInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInteractor.swift; sourceTree = "<group>"; };
+		72D093152821A1F200357A67 /* RegisterRouterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouterMock.swift; sourceTree = "<group>"; };
+		72D093172821A20800357A67 /* RegisterInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractorMock.swift; sourceTree = "<group>"; };
+		72D093192821A6E700357A67 /* RegisterPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenterMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +140,10 @@
 		72A88952281A67510094CFC7 /* RegisterrTests */ = {
 			isa = PBXGroup;
 			children = (
-				72A88953281A67510094CFC7 /* RegisterrTests.swift */,
+				72A88953281A67510094CFC7 /* RegisterInteractorTests.swift */,
+				72D093152821A1F200357A67 /* RegisterRouterMock.swift */,
+				72D093172821A20800357A67 /* RegisterInteractorMock.swift */,
+				72D093192821A6E700357A67 /* RegisterPresenterMock.swift */,
 			);
 			path = RegisterrTests;
 			sourceTree = "<group>";
@@ -156,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				72A8896E281A68460094CFC7 /* RegisterPresenter.swift */,
-				72A8896F281A68460094CFC7 /* RegisterWorker.swift */,
 				72A88970281A68460094CFC7 /* RegisterRouter.swift */,
 				72A88971281A68460094CFC7 /* RegisterModels.swift */,
 				72A88972281A68460094CFC7 /* RegisterViewController.swift */,
@@ -182,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				72A8897F281A84EB0094CFC7 /* LoggedPresenter.swift */,
-				72A88980281A84EB0094CFC7 /* LoggedWorker.swift */,
 				72A88981281A84EB0094CFC7 /* LoggedRouter.swift */,
 				72A88982281A84EB0094CFC7 /* LoggedModels.swift */,
 				72A88983281A84EB0094CFC7 /* LoggedViewController.swift */,
@@ -332,11 +335,9 @@
 				72A8897A281A68460094CFC7 /* RegisterViewController.swift in Sources */,
 				72A8898C281A84EB0094CFC7 /* LoggedProtocols.swift in Sources */,
 				72A88978281A68460094CFC7 /* RegisterRouter.swift in Sources */,
-				72A88988281A84EB0094CFC7 /* LoggedWorker.swift in Sources */,
 				72A8897B281A68460094CFC7 /* RegisterProtocols.swift in Sources */,
 				72A88976281A68460094CFC7 /* RegisterPresenter.swift in Sources */,
 				72A88987281A84EB0094CFC7 /* LoggedPresenter.swift in Sources */,
-				72A88977281A68460094CFC7 /* RegisterWorker.swift in Sources */,
 				72A8898E281A84EB0094CFC7 /* LoggedInteractor.swift in Sources */,
 				72A8898D281A84EB0094CFC7 /* LoggedAssembly.swift in Sources */,
 				72A8897C281A68460094CFC7 /* RegisterAssembly.swift in Sources */,
@@ -348,7 +349,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72A88954281A67510094CFC7 /* RegisterrTests.swift in Sources */,
+				72A88954281A67510094CFC7 /* RegisterInteractorTests.swift in Sources */,
+				72D0931A2821A6E700357A67 /* RegisterPresenterMock.swift in Sources */,
+				72D093182821A20800357A67 /* RegisterInteractorMock.swift in Sources */,
+				72D093162821A1F200357A67 /* RegisterRouterMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

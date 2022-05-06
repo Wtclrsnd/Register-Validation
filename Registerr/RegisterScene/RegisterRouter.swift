@@ -17,7 +17,7 @@ final class RegisterRouter: RegisterRoutingLogic, RegisterDataPassing {
     }
 
     func moveToLogged(viewModel: Register.InitForm.ViewModel) {
-        let loggedVC = LoggedAssembly.build()
+        let loggedVC = LoggedAssembly.build(viewModel)
         viewController?.navigationController?.pushViewController(loggedVC, animated: true)
     }
 }

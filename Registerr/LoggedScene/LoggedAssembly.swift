@@ -9,13 +9,13 @@
 import UIKit
 
 enum LoggedAssembly {
-    static func build() -> UIViewController {
+    static func build(_ model: Register.InitForm.ViewModel) -> UIViewController {
         let presenter = LoggedPresenter()
-        let worker = LoggedWorker()
-        let interactor = LoggedInteractor(presenter: presenter, worker: worker)
+        let interactor = LoggedInteractor(presenter: presenter)
         let router = LoggedRouter(dataStore: interactor)
         let viewController = LoggedViewController(interactor: interactor, router: router)
 
+        interactor.rawData = model
         presenter.view = viewController
         router.viewController = viewController
 

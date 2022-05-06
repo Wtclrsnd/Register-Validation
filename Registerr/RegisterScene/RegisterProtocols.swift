@@ -15,6 +15,7 @@ protocol RegisterDataStore {}
 protocol RegisterBusinessLogic {
     func analyzeLogin(_ request: Register.InitForm.Request)
     func analyzePassword(_ request: Register.InitForm.Request)
+    func analyzeLoggedIn(_ request: Register.InitForm.Request)
 }
 
 protocol RegisterWorkerLogic {}
@@ -22,11 +23,13 @@ protocol RegisterWorkerLogic {}
 protocol RegisterPresentationLogic {
     func presentLoginSolution(_ response: Register.InitForm.Response)
     func presentPasswordSolution(_ response: Register.InitForm.Response)
+    func presentLoggedIn(_ response: Register.InitForm.Response)
 }
 
 protocol RegisterDisplayLogic: AnyObject {
     func displayLoginSolution(_ viewModel: Register.InitForm.ViewModel)
     func displayPasswordSolution(_ viewModel: Register.InitForm.ViewModel)
+    func displayLoggedIn(_ viewModel: Register.InitForm.ViewModel)
 }
 
 protocol RegisterRoutingLogic {

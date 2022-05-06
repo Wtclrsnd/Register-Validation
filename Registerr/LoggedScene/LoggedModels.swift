@@ -9,7 +9,13 @@
 enum Logged {
     enum InitForm {
         struct Request {}
-        struct Response {}
-        struct ViewModel {}
+        struct Response {
+            var loginStatus: Status
+            var passwordStatus: Status
+        }
+        struct ViewModel {
+            var loginStatus: Status
+            var passwordStatus: Status
+        }
     }
 }

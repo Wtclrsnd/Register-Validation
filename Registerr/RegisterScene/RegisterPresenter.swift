@@ -7,6 +7,7 @@
 //
 
 final class RegisterPresenter: RegisterPresentationLogic {
+
     weak var view: RegisterDisplayLogic?
 
     func presentLoginSolution(_ response: Register.InitForm.Response) {
@@ -17,5 +18,10 @@ final class RegisterPresenter: RegisterPresentationLogic {
     func presentPasswordSolution(_ response: Register.InitForm.Response) {
         let model = Register.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
         view?.displayPasswordSolution(model)
+    }
+
+    func presentLoggedIn(_ response: Register.InitForm.Response) {
+        let model = Register.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
+        view?.displayLoggedIn(model)
     }
 }

@@ -10,6 +10,7 @@ final class LoggedPresenter: LoggedPresentationLogic {
     weak var view: LoggedDisplayLogic?
 
     func presentInitForm(_ response: Logged.InitForm.Response) {
-        view?.displayInitForm(Logged.InitForm.ViewModel())
+        let viewModel = Logged.InitForm.ViewModel(loginStatus: response.loginStatus, passwordStatus: response.passwordStatus)
+        view?.displayInitForm(viewModel)
     }
 }

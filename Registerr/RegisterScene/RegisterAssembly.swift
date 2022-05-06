@@ -11,8 +11,7 @@ import UIKit
 enum RegisterAssembly {
     static func build() -> UIViewController {
         let presenter = RegisterPresenter()
-        let worker = RegisterWorker()
-        let interactor = RegisterInteractor(presenter: presenter, worker: worker)
+        let interactor = RegisterInteractor(presenter: presenter)
         let router = RegisterRouter(dataStore: interactor)
         let viewController = RegisterViewController(interactor: interactor, router: router)
 

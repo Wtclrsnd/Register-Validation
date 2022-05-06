@@ -26,5 +26,5 @@ enum Register {
 }
 
 enum Status {
-    case sucsess, isEmpty, isLong, isShort, notEntered, entered
+    case isEmpty, isLong, isShort, notEntered, entered, correct, incorrect
 }
