@@ -34,6 +34,7 @@ class RegisterInteractorTests: XCTestCase {
     }
 
     func testShortLoginSucsess() throws {
+        // given
         let request = Register.InitForm.Request(login: "AA", password: "000000", loginStatus: .notEntered, passwordStatus: .notEntered)
         // when
         sut.analyzeLogin(request)
@@ -43,25 +44,45 @@ class RegisterInteractorTests: XCTestCase {
     }
 
     func testLongPasswordSucsess() throws {
+        // given
         let request = Register.InitForm.Request(login: "AAAAAA", password: "00000000000000000000", loginStatus: .notEntered, passwordStatus: .notEntered)
+        // when
         sut.analyzePassword(request)
         let passSt = presenter.responseDisplay.passwordStatus
+        // then
         XCTAssertEqual(passSt, .isLong)
     }
 
-    func testShortPasswordSucsess() {
+    func testShortPasswordSucsess() throws {
+        // given
         let request = Register.InitForm.Request(login: "AAAAAA", password: "00", loginStatus: .notEntered, passwordStatus: .notEntered)
+        // when
         sut.analyzePassword(request)
         let passSt = presenter.responseDisplay.passwordStatus
+        // then
         XCTAssertEqual(passSt, .isShort)
     }
 
-    func testAllFieldsEmptySucsess() {
+    func testAllFieldsEmptySucsess() throws {
+        // given
         let request = Register.InitForm.Request(login: "", password: "", loginStatus: .notEntered, passwordStatus: .notEntered)
+        // when
         sut.analyzeLogin(request)
         sut.analyzePassword(request)
         let status = presenter.responseDisplay
+        // then
         XCTAssertEqual(status.loginStatus, .isEmpty)
         XCTAssertEqual(status.passwordStatus, .isEmpty)
+    }
+
+    func testCorrectDataSucsess() throws {
+        // given
+        let request = Register.InitForm.Request(login: "EmilShpeklord", password: "123456", loginStatus: .correct, passwordStatus: .correct)
+        // when
+        sut.analyzeLoggedIn(request)
+        let status = presenter.responseDisplay
+        // then
+        XCTAssertEqual(status.loginStatus, .correct)
+        XCTAssertEqual(status.passwordStatus, .correct)
     }
 }

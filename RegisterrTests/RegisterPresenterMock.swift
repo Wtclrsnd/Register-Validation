@@ -20,8 +20,13 @@ final class RegisterPresenterMock: RegisterPresentationLogic {
     }
 
     func presentLoggedIn(_ response: Register.InitForm.Response) {
-        responseDisplay.loginStatus = .incorrect
-        responseDisplay.passwordStatus = .incorrect
+        if response.loginStatus == .correct && response.passwordStatus == .correct {
+            responseDisplay.loginStatus = .correct
+            responseDisplay.passwordStatus = .correct
+        } else {
+            responseDisplay.loginStatus = .incorrect
+            responseDisplay.passwordStatus = .incorrect
+        }
     }
 
 }

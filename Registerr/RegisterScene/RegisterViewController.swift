@@ -125,16 +125,11 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
     // MARK: - Handlers
     @objc private func loggingIn() {
         var request = Register.InitForm.Request(login: loginTextField.text ?? "", password: passwordTextField.text ?? "", loginStatus: .entered, passwordStatus: .entered)
-        if request.login == "EmilShpeklord" && request.password == "123456" {
-            request.loginStatus = .correct
-            request.passwordStatus = .correct
-        } else {
-            interactor.analyzeLogin(request)
-            interactor.analyzePassword(request)
-            if validationLoginLabel.isHidden && validationPasswordLabel.isHidden {
-                request.loginStatus = .incorrect
-                request.passwordStatus = .incorrect
-            }
+        interactor.analyzeLogin(request)
+        interactor.analyzePassword(request)
+        if validationLoginLabel.isHidden && validationPasswordLabel.isHidden {
+            request.loginStatus = .incorrect
+            request.passwordStatus = .incorrect
         }
         interactor.analyzeLoggedIn(request)
     }

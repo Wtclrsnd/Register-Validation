@@ -56,18 +56,20 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
 
     func analyzeLoggedIn(_ request: Register.InitForm.Request) {
         var response = Register.InitForm.Response(loginStatus: .notEntered, passwordStatus: .notEntered)
-        switch (request.loginStatus, request.passwordStatus) {
-        case (.correct, .correct):
+        if request.login == "EmilShpeklord" && request.password == "123456" {
             response.loginStatus = .correct
             response.passwordStatus = .correct
             presenter.presentLoggedIn(response)
-        case (.entered, .entered):
-            analyzeLogin(request)
-            analyzePassword(request)
-        default:
-            response.loginStatus = .incorrect
-            response.passwordStatus = .incorrect
-            presenter.presentLoggedIn(response)
+        } else {
+            switch (request.loginStatus, request.passwordStatus) {
+            case (.entered, .entered):
+                analyzeLogin(request)
+                analyzePassword(request)
+            default:
+                response.loginStatus = .incorrect
+                response.passwordStatus = .incorrect
+                presenter.presentLoggedIn(response)
+            }
         }
     }
 }
