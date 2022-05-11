@@ -8,18 +8,19 @@
 import UIKit
 
 final class LoggedInteractor: LoggedBusinessLogic, LoggedDataStore {
-    private let presenter: LoggedPresentationLogic
+    var rawCredentialStore: Credential?
 
-    var rawData: Register.InitForm.ViewModel?
+    private let presenter: LoggedPresentationLogic
 
     init(
         presenter: LoggedPresentationLogic
     ) {
         self.presenter = presenter
+
     }
 
     func requestInitForm(_ request: Logged.InitForm.Request) {
-        let response = Logged.InitForm.Response(loginStatus: rawData?.loginStatus ?? .incorrect, passwordStatus: rawData?.passwordStatus ?? .incorrect)
+        let response = Logged.InitForm.Response(loginStatus: rawCredentialStore?.loginStatus ?? .incorrect, passwordStatus: rawCredentialStore?.passwordStatus ?? .incorrect)
         self.presenter.presentInitForm(response)
     }
 }

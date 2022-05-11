@@ -85,4 +85,39 @@ class RegisterInteractorTests: XCTestCase {
         XCTAssertEqual(status.loginStatus, .correct)
         XCTAssertEqual(status.passwordStatus, .correct)
     }
+
+    func testIncorrectDataFailure() throws {
+        let request = Register.InitForm.Request(login: "AAAAAAAA", password: "PPPPPPP", loginStatus: .notEntered, passwordStatus: .notEntered)
+        sut.analyzeLoggedIn(request)
+        let status = presenter.responseDisplay
+        XCTAssertNotEqual(status.loginStatus, .correct)
+        XCTAssertNotEqual(status.passwordStatus, .correct)
+    }
+
+    func testStringAppendingMeasure() throws {
+        var str = "A"
+        measure {
+            for _ in 0...1000 {
+                str.append("B")
+            }
+        }
+    }
+
+    func testStringAddingMeasure() throws {
+        var str = "A"
+        measure {
+            for _ in 0...1000 {
+                str = str + "B"
+            }
+        }
+    }
+
+    func testStringWritingMeasure() throws {
+        var str = "A"
+        measure {
+            for _ in 0...1000 {
+                str.write("B")
+            }
+        }
+    }
 }

@@ -183,6 +183,6 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
     }
 
     func displayLoggedIn(_ viewModel: Register.InitForm.ViewModel) {
-        router.moveToLogged(viewModel: viewModel)
+        router.moveToLogged(credential: interactor.credentialDataStore)
     }
 }

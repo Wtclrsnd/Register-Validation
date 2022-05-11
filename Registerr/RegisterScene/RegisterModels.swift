@@ -28,3 +28,8 @@ enum Register {
 enum Status {
     case isEmpty, isLong, isShort, notEntered, entered, correct, incorrect
 }
+
+struct Credential {
+    var loginStatus: Status
+    var passwordStatus: Status
+}

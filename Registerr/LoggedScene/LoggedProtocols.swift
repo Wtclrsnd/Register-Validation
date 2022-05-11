@@ -10,7 +10,8 @@ protocol LoggedDataPassing {
     var dataStore: LoggedDataStore { get }
 }
 
-protocol LoggedDataStore {}
+protocol LoggedDataStore {
+}
 
 protocol LoggedBusinessLogic {
     func requestInitForm(_ request: Logged.InitForm.Request)

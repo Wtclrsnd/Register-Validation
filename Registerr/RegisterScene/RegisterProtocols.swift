@@ -10,9 +10,12 @@ protocol RegisterDataPassing {
     var dataStore: RegisterDataStore { get }
 }
 
-protocol RegisterDataStore {}
+protocol RegisterDataStore {
+    var credentialDataStore: Credential { get set }
+}
 
 protocol RegisterBusinessLogic {
+    var credentialDataStore: Credential { get set }
     func analyzeLogin(_ request: Register.InitForm.Request)
     func analyzePassword(_ request: Register.InitForm.Request)
     func analyzeLoggedIn(_ request: Register.InitForm.Request)
@@ -33,5 +36,5 @@ protocol RegisterDisplayLogic: AnyObject {
 }
 
 protocol RegisterRoutingLogic {
-    func moveToLogged(viewModel: Register.InitForm.ViewModel)
+    func moveToLogged(credential: Credential)
 }

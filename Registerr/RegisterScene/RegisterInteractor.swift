@@ -8,12 +8,16 @@
 import UIKit
 
 final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
+
+    var credentialDataStore: Credential
+
     private let presenter: RegisterPresentationLogic
 
     init(
         presenter: RegisterPresentationLogic
     ) {
         self.presenter = presenter
+        credentialDataStore = Credential(loginStatus: .notEntered, passwordStatus: .notEntered)
     }
 
     func analyzeLogin(_ request: Register.InitForm.Request) {
@@ -68,8 +72,10 @@ final class RegisterInteractor: RegisterBusinessLogic, RegisterDataStore {
             default:
                 response.loginStatus = .incorrect
                 response.passwordStatus = .incorrect
-                presenter.presentLoggedIn(response)
+                presenter.presentLoggedIn(response) // validation first
             }
+            credentialDataStore.loginStatus = response.loginStatus
+            credentialDataStore.passwordStatus = response.passwordStatus
         }
     }
 }
