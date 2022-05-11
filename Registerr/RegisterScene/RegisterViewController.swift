@@ -30,6 +30,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         textField.layer.cornerRadius = 10
         textField.backgroundColor = .white
         textField.accessibilityIdentifier = "LoginTF"
+        textField.isAccessibilityElement = true
         return textField
     }()
 
@@ -44,6 +45,7 @@ final class RegisterViewController: UIViewController, RegisterDisplayLogic {
         textField.layer.cornerRadius = 10
         textField.backgroundColor = .white
         textField.accessibilityIdentifier = "PasswordTF"
+        textField.isAccessibilityElement = true
         return textField
     }()
 

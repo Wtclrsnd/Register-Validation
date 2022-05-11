@@ -97,7 +97,7 @@ class RegisterInteractorTests: XCTestCase {
     func testStringAppendingMeasure() throws {
         var str = "A"
         measure {
-            for _ in 0...1000 {
+            for _ in 0...100000 {
                 str.append("B")
             }
         }
@@ -106,7 +106,7 @@ class RegisterInteractorTests: XCTestCase {
     func testStringAddingMeasure() throws {
         var str = "A"
         measure {
-            for _ in 0...1000 {
+            for _ in 0...100000 {
                 str = str + "B"
             }
         }
@@ -115,7 +115,7 @@ class RegisterInteractorTests: XCTestCase {
     func testStringWritingMeasure() throws {
         var str = "A"
         measure {
-            for _ in 0...1000 {
+            for _ in 0...100000 {
                 str.write("B")
             }
         }
